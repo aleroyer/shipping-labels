@@ -47,7 +47,10 @@ Strip content to keep only the bare minimum so you can print 4 labels per page o
 			if err != nil {
 				log.Fatal().Msgf("Error when trying to initialize the program: %s", err)
 			}
-			preparator.Prepare()
+			err = preparator.Prepare()
+			if err != nil {
+				log.Fatal().Msg(err.Error())
+			}
 			log.Info().Msg("Job done!")
 		}
 	},

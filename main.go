@@ -22,8 +22,6 @@ import (
 	"os"
 )
 
-var LogLevel zerolog.Level
-
 func main() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 	cmd.Execute()
